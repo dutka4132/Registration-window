@@ -1,0 +1,59 @@
+<MainWidgets>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 35
+        spacing: 20
+
+        Label:
+            id: text
+            text: 'Register for successful future!'
+            font_size: 30
+            size_hint: (.5, .5)
+            pos_hint: {'center_x': .42, 'center_y': .1}
+            color: (0, 1, 0, 1)
+
+        Label:
+            id: error
+            text: ''
+            font_size: 15
+            size_hint: (.3, .1)
+            pos_hint: {'center_x': .15, 'center_y': 1}
+            color: (1, 0, 0, 1)
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 5
+            spacing: 5
+
+            TextInput:
+                id: mail
+                hint_text: 'Input your mail...'
+                multiline: False
+                font_size: 20
+                size_hint: (None, None)
+                size: (300, 35)
+
+            TextInput:
+                id: password
+                hint_text: 'Input your password...'
+                multiline: False
+                font_size: 20
+                size_hint: (None, None)
+                size: (300, 35)
+
+        BoxLayout:
+            spacing: 10
+            size_hint: (1, .25)
+            Button:
+                text: 'Sign up'
+                font_size: 20
+                size_hint: (None, None)
+                size: (75, 35)
+                on_press: root.sign_up(mail.text, password.text)
+
+            Button:
+                text: 'Sign in'
+                font_size: 20
+                size_hint: (None, None)
+                size: (75, 35)
+                on_press: root.sign_in()
